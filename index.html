@@ -155,27 +155,27 @@
     }
 
     /* Chat Button */
-    #topBtn {
+    #chatBtn {
       display: none;
       position: fixed;
-      bottom: 40px;
+      bottom: 30px;
       right: 30px;
       z-index: 99;
       background-color: #C89EBF;
       border: none;
       border-radius: 50%;
-      padding: 15px;
+      padding: 14px;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    #topBtn:hover {
+    #chatBtn:hover {
       background-color: #A569BD;
     }
 
-    #topBtn img {
-      width: 25px;
-      height: 25px;
+    #chatBtn img {
+      width: 28px;
+      height: 28px;
     }
 
     /* Slide Animation */
@@ -259,7 +259,7 @@
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Google Data Analytics Professional</li>
+      <li>Google Data Analytics Professional Certificate</li>
       <li>AWS Certified Cloud Practitioner</li>
       <li>Tableau Data Analyst Certification</li>
     </ul>
@@ -284,8 +284,8 @@
 </div>
 
 <!-- Chat Button -->
-<button onclick="openLinkedIn()" id="topBtn" title="Message Me">
-  <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="Chat Icon">
+<button onclick="openLinkedIn()" id="chatBtn" title="Message Me">
+  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
 </button>
 
 <!-- Scripts -->
@@ -308,12 +308,12 @@
   }
 
   // Show/hide the chat button
-  let topBtn = document.getElementById("topBtn");
+  let chatBtn = document.getElementById("chatBtn");
   window.onscroll = function() {
     if (document.documentElement.scrollTop > 300) {
-      topBtn.style.display = "block";
+      chatBtn.style.display = "block";
     } else {
-      topBtn.style.display = "none";
+      chatBtn.style.display = "none";
     }
   };
 </script>
