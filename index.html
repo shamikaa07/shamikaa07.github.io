@@ -9,9 +9,29 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #E6E6FA; /* Lilac */
+      background-color: #E6E6FA;
       color: #333;
       text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(186, 139, 255, 0.4) 0%, rgba(186, 139, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
     }
 
     .main-section {
@@ -36,7 +56,6 @@
     h1 {
       color: #483D8B;
       animation: slideIn 2s ease-out;
-      transition: text-shadow 0.2s ease;
     }
 
     h2 {
@@ -83,10 +102,14 @@
 
 <body>
 
+<div class="glow" id="glow"></div>
+
+<div class="content">
+
   <div class="main-section">
     <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
 
-    <h1 id="nameTitle">Hi, I'm Shamika! </h1>
+    <h1>Hi, I'm Shamika! 👋</h1>
     <p>Welcome to my personal portfolio — where creativity meets technology.</p>
   </div>
 
@@ -175,15 +198,16 @@
     © 2025 Shamika Awasarmol. All rights reserved.
   </footer>
 
-  <!-- JavaScript for Moving Shadow Effect -->
-  <script>
-    const nameTitle = document.getElementById('nameTitle');
-    document.addEventListener('mousemove', function(e) {
-      const x = (e.clientX / window.innerWidth - 0.5) * 40;
-      const y = (e.clientY / window.innerHeight - 0.5) * 40;
-      nameTitle.style.textShadow = `${x}px ${y}px 10px rgba(93, 63, 211, 0.6)`;
-    });
-  </script>
+</div>
+
+<!-- Glow effect script -->
+<script>
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', function(e) {
+    glow.style.left = e.pageX + 'px';
+    glow.style.top = e.pageY + 'px';
+  });
+</script>
 
 </body>
 </html>
