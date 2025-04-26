@@ -1,278 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shamika Awasarmol | Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #FAF5FF;
-      color: #333;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Glow Cursor */
-    .glow {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(200,158,191,0.4) 0%, rgba(200,158,191,0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-
-    /* Loading Animation */
-    #loading {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: #FAF5FF;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .loader {
-      border: 8px solid #eee;
-      border-top: 8px solid #A569BD;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1.2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -220px;
-      width: 200px;
-      height: 100%;
-      background-color: #F3E8F7;
-      padding-top: 60px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-      z-index: 3;
-      text-align: center;
-      transition: 0.4s;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar-name {
-      font-size: 20px;
-      font-weight: bold;
-      color: #C89EBF;
-      margin-bottom: 20px;
-      padding: 0 10px;
-      border-bottom: 2px solid #C89EBF;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #B287A3;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .sidebar a:hover {
-      background-color: #E6D0EB;
-      color: #fff;
-      border-radius: 10px;
-      transform: scale(1.05);
-    }
-
-    /* Hamburger Menu */
-    .menu-btn {
-      position: fixed;
-      top: 15px;
-      left: 20px;
-      font-size: 28px;
-      background: none;
-      border: none;
-      color: #A569BD;
-      z-index: 4;
-      cursor: pointer;
-    }
-
-    /* Content */
-    .content {
-      margin-left: 0;
-      padding: 20px;
-      transition: margin-left 0.4s;
-    }
-
-    .sidebar.active ~ .content {
-      margin-left: 220px;
-    }
-
-    /* Top Section */
-    .top-section {
-      margin-top: 50px;
-      margin-bottom: 50px;
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #D8BFD8;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #B287A3;
-      font-size: 34px;
-      animation: slideIn 2s ease-out;
-      margin-bottom: 10px;
-    }
-
-    section {
-      margin-bottom: 50px;
-      padding: 20px;
-      background: transparent;
-      text-align: left;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    h2 {
-      color: #A569BD;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    p, ul li {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #555;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #F3E8F7;
-      color: #C89EBF;
-      font-size: 14px;
-      border-top: 2px solid #C89EBF;
-      text-align: center;
-    }
-
-    /* Chat Button */
-    #chatBtn {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99;
-      background-color: #C89EBF;
-      border: none;
-      border-radius: 50%;
-      padding: 14px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      cursor: pointer;
-    }
-
-    #chatBtn:hover {
-      background-color: #A569BD;
-    }
-
-    #chatBtn img {
-      width: 28px;
-      height: 28px;
-      display: block;
-    }
-
-    /* Hide Chat Button on Mobile */
-    @media (max-width: 767px) {
-      #chatBtn {
-        display: none !important;
-      }
-    }
-
-    /* Slide Animation */
-    @keyframes slideIn {
-      0% { transform: translateY(-100px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .menu-btn {
-        display: none;
-      }
-      .sidebar {
-        left: 0;
-      }
-      .content {
-        margin-left: 220px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- Loading Animation -->
-<div id="loading">
-  <div class="loader"></div>
-</div>
-
-<!-- Glow Cursor -->
-<div class="glow" id="glow"></div>
-
-<!-- Hamburger Button -->
-<button class="menu-btn" onclick="toggleSidebar()">☰</button>
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <h2 class="sidebar-name">Shamika Awasarmol</h2>
-  <a href="#about">About Me</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#projects">Projects</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#connect">Connect</a>
-</div>
-
-<!-- Main Content -->
+<!-- inside <div class="content"> -->
 <div class="content">
 
   <div class="top-section">
@@ -281,46 +7,44 @@
     <p>Analytics Enthusiast | Storytelling Through Data and Technology.</p>
   </div>
 
+  <!-- About Me Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights that fuel business growth, optimize processes, and enhance customer experiences. With a Master’s degree in Information Systems from the University of Texas at Arlington, I bring a strong foundation in data analytics, reporting automation, and business intelligence, leveraging tools like SQL, Tableau, Power BI, and Looker to deliver impactful solutions.
-Throughout my journey, I’ve built dashboards, streamlined reporting processes, and uncovered key trends that have helped businesses make smarter, faster decisions. I have a keen eye for identifying patterns others might miss, always seeking to connect the dots between technical findings and real-world outcomes.
-Driven by a passion for problem-solving and continuous learning, I thrive in fast-paced, collaborative environments where innovation and strategic thinking are essential. Whether it's improving operational efficiency, enabling data-driven decision-making, or enhancing customer satisfaction, I am committed to delivering value through clear insights and strategic recommendations.
-Outside of the numbers, I’m an advocate for building strong cross-functional relationships, translating technical concepts into business-friendly language, and continuously evolving my skills to stay ahead in a rapidly changing digital landscape.</p>
+    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights that fuel business growth, optimize processes, and enhance customer experiences. With a Master’s degree in Information Systems from the University of Texas at Arlington, I bring a strong foundation in data analytics, reporting automation, and business intelligence, leveraging tools like SQL, Tableau, Power BI, and Looker to deliver impactful solutions...
+    </p>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Basey Insurance • Texas, USA</strong>
-        </li>Data Analytics Intern</li>
-      <li><strong>Zycus Infotech Pvt.Ltd. • Mumbai, INDIA</strong>
-      </li>Business Analyst</li>
-    </ul>
-  </section>
-
+  <!-- Education Section FIRST -->
   <section id="education">
     <h2>Education</h2>
     <ul>
       <li><strong>University of Texas at Arlington • Texas, USA</strong></li> 
-      </li>Master of Science in Information Systems (Aug 2023 – May 2025)</li>
-      </li> Relevant Coursework: Python, Project Management, AI Ethics,Business Statistics, Data Warehousing, Web and Social Analytics, Enterprice Resource Planning and Analysis & Design.</li>
-      <li><strong>University of Mumbai • Mumbai, INDIA</strong>
-        </li>Bachelor of Engineering- Electronics & Telecommunication Engineering</li>
+      <li>Master of Science in Information Systems (Aug 2023 – May 2025)</li>
+      <li>Relevant Coursework: Python, Project Management, AI Ethics, Business Statistics, Data Warehousing, Web and Social Analytics, Enterprise Resource Planning and Analysis & Design.</li>
+      <li><strong>University of Mumbai • Mumbai, INDIA</strong></li>
+      <li>Bachelor of Engineering - Electronics & Telecommunication Engineering</li>
     </ul>
   </section>
 
+  <!-- Experience Section AFTER Education -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Basey Insurance • Texas, USA</strong> — Data Analytics Intern</li>
+      <li><strong>Zycus Infotech Pvt.Ltd. • Mumbai, INDIA</strong> — Business Analyst</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
     <ul>
       <li><strong>Netflix Data Analysis:</strong> Performed data cleaning and data preprocessing on 10,000 TV shows & movies to analyze customer behavior, geographic patterns; designed dashboard to discover trends in the distributions, ratings, top genres over different period</li>
-      <li><strong>Digital Ad Campaign Performance Analysis:</strong> Conducted EDA, statistical analysis (ANOVA), and machine learning modeling to evaluate social media ad performance.
-Built predictive models (Random Forest, Decision Trees) to estimate engagement scores and conversion likelihood.
-Assessed ROI impact across marketing channels and identified key drivers of ad success.
-Applied time-series analysis to uncover seasonal trends affecting ad performance</li>
+      <li><strong>Digital Ad Campaign Performance Analysis:</strong> Conducted EDA, statistical analysis (ANOVA), and machine learning modeling to evaluate social media ad performance. Built predictive models (Random Forest, Decision Trees) to estimate engagement scores and conversion likelihood. Assessed ROI impact across marketing channels and identified key drivers of ad success. Applied time-series analysis to uncover seasonal trends affecting ad performance.</li>
     </ul>
   </section>
 
+  <!-- Certifications Section -->
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
@@ -332,6 +56,7 @@ Applied time-series analysis to uncover seasonal trends affecting ad performance
     </ul>
   </section>
 
+  <!-- Connect Section -->
   <section id="connect">
     <h2>Connect with Me</h2>
     <p>
@@ -344,61 +69,9 @@ Applied time-series analysis to uncover seasonal trends affecting ad performance
     </p>
   </section>
 
+  <!-- Footer -->
   <footer>
     © 2025 Shamika Awasarmol. All rights reserved.
   </footer>
 
 </div>
-
-<!-- Chat Button (Hidden on Mobile) -->
-<a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" id="chatBtn" title="Message Me">
-  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
-</a>
-
-<!-- Scripts -->
-<script>
-  // Glow Cursor
-  const glow = document.getElementById('glow');
-  document.addEventListener('mousemove', function(e) {
-    glow.style.left = e.pageX + 'px';
-    glow.style.top = e.pageY + 'px';
-  });
-
-  // Sidebar toggle
-  function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-  }
-
-  // Hide loading screen
-  window.addEventListener("load", function() {
-    document.getElementById("loading").style.display = "none";
-  });
-
-  // Chat Button Scroll Show
-  let chatBtn = document.getElementById("chatBtn");
-  window.onscroll = function() {
-    if (window.innerWidth >= 768) {
-      if (document.documentElement.scrollTop > 300) {
-        chatBtn.style.display = "block";
-      } else {
-        chatBtn.style.display = "none";
-      }
-    } else {
-      chatBtn.style.display = "none";
-    }
-  };
-
-  // Fade-in Sections
-  const sections = document.querySelectorAll('section');
-  window.addEventListener('scroll', function() {
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight - 100) {
-        section.classList.add('show');
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
