@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shamika Awasarmol | Portfolio</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
+    /* General Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
@@ -85,7 +84,6 @@
       border-radius: 10px;
       transform: scale(1.05);
     }
-    /* Hamburger Menu */
     .menu-btn {
       position: fixed;
       top: 15px;
@@ -97,10 +95,9 @@
       z-index: 4;
       cursor: pointer;
     }
-    /* Content */
     .content { margin-left: 0; padding: 20px; transition: margin-left 0.4s; }
     .sidebar.active ~ .content { margin-left: 220px; }
-    /* Top Section */
+    /* Sections */
     .top-section {
       margin-top: 50px;
       margin-bottom: 50px;
@@ -146,7 +143,6 @@
       border-top: 2px solid #C89EBF;
       text-align: center;
     }
-    /* Chat Button */
     #chatBtn {
       display: none;
       position: fixed;
@@ -164,13 +160,72 @@
     #chatBtn:hover { background-color: #A569BD; }
     #chatBtn img { width: 28px; height: 28px; display: block; }
     @media (max-width: 767px) { #chatBtn { display: none !important; } }
-    /* Slide Animation */
     @keyframes slideIn { 0% { transform: translateY(-100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-    /* Responsive */
     @media (min-width: 768px) {
       .menu-btn { display: none; }
       .sidebar { left: 0; }
       .content { margin-left: 220px; }
+    }
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .skill-item {
+      background: #F3E8F7;
+      padding: 10px 15px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #555;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .skill-item:hover {
+      transform: scale(1.05);
+      background: #E6D0EB;
+      color: #fff;
+    }
+    .skill-item img {
+      width: 24px;
+      height: 24px;
+    }
+    /* Connect Section */
+    .connect-heading {
+      text-align: center;
+      font-size: 24px;
+      color: #A569BD;
+      margin-bottom: 20px;
+    }
+    .connect-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .connect-icons a {
+      background-color: #F3E8F7;
+      padding: 14px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .connect-icons a:hover {
+      background-color: #C89EBF;
+      transform: scale(1.1);
+    }
+    .connect-icons img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: 1;
     }
   </style>
 </head>
@@ -192,9 +247,10 @@
 <div class="sidebar" id="sidebar">
   <h2 class="sidebar-name">Shamika Awasarmol</h2>
   <a href="#about">About Me</a>
-  <a href="#education">Education</a> <!-- Education first -->
+  <a href="#education">Education</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
   <a href="#certifications">Certifications</a>
   <a href="#connect">Connect</a>
 </div>
@@ -208,649 +264,68 @@
     <p>Analytics Enthusiast | Storytelling Through Data and Technology.</p>
   </div>
 
-  <!-- About Me -->
- <section id="about">
+  <!-- Sections -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights that fuel business growth, optimize processes, and enhance customer experiences. With a Master’s degree in Information Systems from the University of Texas at Arlington, I bring a strong foundation in data analytics, reporting automation, and business intelligence, leveraging tools like SQL, Tableau, Power BI, and Looker to deliver impactful solutions.
-Throughout my journey, I’ve built dashboards, streamlined reporting processes, and uncovered key trends that have helped businesses make smarter, faster decisions. I have a keen eye for identifying patterns others might miss, always seeking to connect the dots between technical findings and real-world outcomes.
-Driven by a passion for problem-solving and continuous learning, I thrive in fast-paced, collaborative environments where innovation and strategic thinking are essential. Whether it's improving operational efficiency, enabling data-driven decision-making, or enhancing customer satisfaction, I am committed to delivering value through clear insights and strategic recommendations.
-Outside of the numbers, I’m an advocate for building strong cross-functional relationships, translating technical concepts into business-friendly language, and continuously evolving my skills to stay ahead in a rapidly changing digital landscape.</p>
+    <p>[Your about me text here]</p>
   </section>
 
-  <!-- Education FIRST -->
- <section id="education">
+  <section id="education">
     <h2>Education</h2>
     <ul>
-      <li><strong>University of Texas at Arlington • Texas, USA</strong></li> 
-      <li>Master of Science in Information Systems (Aug 2023 – May 2025)</li>
-      <li>Relevant Coursework: Python, Project Management, AI Ethics, Business Statistics, Data Warehousing, Web and Social Analytics, Enterprise Resource Planning and Analysis & Design.</li>
-      <li><strong>University of Mumbai • Mumbai, INDIA</strong></li>
-      <li>Bachelor of Engineering - Electronics & Telecommunication Engineering</li>
+      <li><strong>University of Texas at Arlington</strong> — M.S. in Information Systems (2023–2025)</li>
+      <li><strong>University of Mumbai</strong> — B.E. Electronics & Telecommunication</li>
     </ul>
   </section>
 
-  <!-- Then Experience -->
   <section id="experience">
     <h2>Experience</h2>
     <ul>
-      <li><strong>Basey Insurance • Texas, USA</strong></li>
-      </li>Data Analytics Intern</li>
-      <li><strong>Zycus Infotech Pvt.Ltd. • Mumbai, INDIA</strong></li>
-      </li>Business Analyst</li>
+      <li><strong>Basey Insurance</strong> — Data Analytics Intern</li>
+      <li><strong>Zycus Infotech</strong> — Business Analyst</li>
     </ul>
   </section>
 
- <!-- Projects Section -->
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Netflix Data Analysis:</strong> Performed data cleaning and data preprocessing on 10,000 TV shows & movies to analyze customer behavior, geographic patterns; designed dashboard to discover trends in the distributions, ratings, top genres over different period</li>
-    <li><strong>Digital Ad Campaign Performance Analysis:</strong> Conducted EDA, statistical analysis (ANOVA), and machine learning modeling to evaluate social media ad performance. Built predictive models (Random Forest, Decision Trees) to estimate engagement scores and conversion likelihood. Assessed ROI impact across marketing channels and identified key drivers of ad success. Applied time-series analysis to uncover seasonal trends affecting ad performance.</li>
-  </ul>
-</section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Netflix Data Analysis</strong> — Dashboard for analyzing trends.</li>
+      <li><strong>Ad Campaign Performance</strong> — Machine learning model to predict engagement.</li>
+    </ul>
+  </section>
 
-<!-- Skills Section -->
-<!-- Skills Section -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="24"> SQL</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" width="24"> Python</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" width="24"> R</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="24"> Excel</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" width="24"> Tableau</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" width="24"> Power BI</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/731/731984.png" width="24"> Looker</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="24"> Data Visualization</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/3304/3304566.png" width="24"> Reporting Automation</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" width="24"> Business Intelligence</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" width="24"> Machine Learning Basics</div>
-    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/3198/3198593.png" width="24"> Problem Solving</div>
-  </div>
-</section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="24"> SQL</div>
+      <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" width="24"> Python</div>
+      <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" width="24"> R</div>
+      <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="24"> Excel</div>
+    </div>
+  </section>
 
-<!-- Extra CSS -->
-<style>
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .skill-item {
-    background: #F3E8F7;
-    padding: 10px 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    color: #555;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  .skill-item:hover {
-    transform: scale(1.05);
-    background: #E6D0EB;
-    color: #fff;
-  }
-  .skill-item img {
-    width: 24px;
-    height: 24px;
-  }
-</style>
-
-
-<!-- Extra CSS -->
-<style>
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .skill-item {
-    background: #F3E8F7;
-    padding: 10px 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    color: #555;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  .skill-item:hover {
-    transform: scale(1.05);
-    background: #E6D0EB;
-    color: #fff;
-  }
-  .skill-item img {
-    width: 24px;
-    height: 24px;
-  }
-</style>
-
-
-
-  <!-- Certifications -->
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Business Analysis Fundamentals - Microsoft</li>
-      <li>Introduction to Data Analytics - Meta</li>
-      <li>UTA Datathon 2024 - UTA</li>
-      <li>Google Analytics for Beginners - Google</li>
-      <li>The Fundamentals of Digital Marketing - Google</li>
+      <li>Business Analysis Fundamentals (Microsoft)</li>
+      <li>Introduction to Data Analytics (Meta)</li>
     </ul>
   </section>
 
-<!-- Connect -->
-<section id="connect">
-  <h2>Connect with Me</h2>
-  <div class="connect-icons">
-    <a href="https://github.com/your-github-username" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" title="GitHub">
-    </a>
-    <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" title="LinkedIn">
-    </a>
-    <a href="mailto:shamikaa06@gmail.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" title="Email">
-    </a>
-  </div>
-</section>
-
-<!-- Extra CSS for Connect Section -->
-<style>
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .connect-icons a {
-    background-color: #2C2F33;
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  }
-  .connect-icons a:hover {
-    background-color: #5865F2; /* Discord-like light hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* Make icons white */
-  }
-</style>
-
-
-<!-- CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #F3E8F7; /* Soft lilac background (lighter than button lilac) */
-    padding: 14px;
-    border-radius: 16px; /* Soft square */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .connect-icons a:hover {
-    background-color: #E6D0EB; /* Slightly darker lilac on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* Make logos pure white */
-    opacity: 1;
-  }
-</style>
-
-
-<!-- CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 22px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Light lilac background */
-    padding: 14px;
-    border-radius: 50%; /* Make it fully circular */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Deeper purple on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 26px;
-    height: 26px;
-    filter: brightness(0) invert(1); /* Force icons pure white */
-    opacity: 1;
-  }
-</style>
-
-
-<!-- CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Light purple */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Darker on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 28px;
-    height: 28px;
-    opacity: 1;
-    filter: none; /* No need now */
-  }
-</style>
-
-<!-- CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Light purple */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Darker purple on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0) invert(1); /* Makes all logos pure white */
-    opacity: 1;
-  }
-</style>
-
-
-<!-- Final Matching CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Lilac */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Darker on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0) invert(1) sepia(1) hue-rotate(270deg) saturate(5) brightness(1.1);
-    /* This filter makes logos softly purplish-white */
-    opacity: 1;
-  }
-</style>
-
-
-<!-- Final Strong CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Deep lilac */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Slightly deeper purple on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    opacity: 1 !important; /* Force FULLY opaque logos */
-    filter: none !important; /* Remove all dullness/tint */
-    transition: none !important; /* No transition on logo */
-  }
-</style>
-
-
-<!-- Strong, Clean CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Deep lilac */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Deeper on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    opacity: 1; /* full visibility */
-    filter: none; /* NO tint, NO brightness changes */
-  }
-</style>
-
-
-<!-- Updated CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* Deep lilac */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Deeper on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    opacity: 0.9; /* visible and slightly soft */
-    filter: hue-rotate(280deg) brightness(1.1) saturate(1.2); 
-    /* Soft purplish tone applied */
-  }
-</style>
-
-
-<!-- Stronger CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px;
-    color: #A569BD;
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD;
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD;
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1);
-  }
-</style>
-
-
-<!-- Stronger CSS -->
-<style>
-  .connect-heading {
-    text-align: center;
-    font-size: 24px; /* Smaller */
-    color: #A569BD; /* Nice matching color */
-    margin-bottom: 20px;
-  }
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .connect-icons a {
-    background-color: #A569BD; /* DEEP visible purple */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .connect-icons a:hover {
-    background-color: #8E44AD; /* Even deeper on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* White logos */
-  }
-</style>
-
-
-<!-- Final Stronger CSS for Connect Section -->
-<style>
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .connect-icons a {
-    background-color: #C89EBF; /* Medium Lilac (stronger and visible) */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  }
-  .connect-icons a:hover {
-    background-color: #A569BD; /* Slightly deeper purple on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* Make icons white */
-  }
-</style>
-
-
-<!-- Updated CSS for Connect Section -->
-<style>
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .connect-icons a {
-    background-color: #D8BFD8; /* DARKER lilac background */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .connect-icons a:hover {
-    background-color: #C89EBF; /* Slightly richer on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* White icons */
-  }
-</style>
-
-
-<!-- Extra CSS for Connect Section -->
-<style>
-  .connect-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .connect-icons a {
-    background-color: #F3E8F7; /* Light lilac background */
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .connect-icons a:hover {
-    background-color: #C89EBF; /* Darker lilac on hover */
-    transform: scale(1.1);
-  }
-  .connect-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* White icons */
-  }
-</style>
-
+  <section id="connect">
+    <h2 class="connect-heading">Connect with Me</h2>
+    <div class="connect-icons">
+      <a href="https://github.com/your-github-username" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" title="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn" title="LinkedIn">
+      </a>
+      <a href="mailto:shamikaa06@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" title="Email">
+      </a>
+    </div>
+  </section>
 
   <footer>© 2025 Shamika Awasarmol. All rights reserved.</footer>
 
