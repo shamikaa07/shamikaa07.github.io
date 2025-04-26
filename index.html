@@ -11,27 +11,40 @@
       font-family: 'Poppins', sans-serif;
       background-color: #E6E6FA;
       color: #333;
-      text-align: center;
       overflow-x: hidden;
-      position: relative;
+      scroll-behavior: smooth;
     }
 
-    .glow {
+    /* Sidebar */
+    .sidebar {
       position: fixed;
       top: 0;
       left: 0;
       width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(186, 139, 255, 0.4) 0%, rgba(186, 139, 255, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+      height: 100%;
+      background-color: #D8BFD8; /* Soft Lilac */
+      padding-top: 40px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
 
+    .sidebar a {
+      display: block;
+      color: #483D8B;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: #C9A9FF;
+      color: white;
+      border-radius: 10px;
+    }
+
+    /* Content */
     .content {
-      position: relative;
-      z-index: 2;
+      margin-left: 220px; /* Push content right to fit sidebar */
+      padding: 20px;
     }
 
     .main-section {
@@ -46,7 +59,7 @@
     }
 
     section {
-      margin: 50px 20px;
+      margin: 50px 0;
       padding: 20px;
       background: #FFFFFF;
       border-radius: 15px;
@@ -84,9 +97,10 @@
       color: #5D3FD3;
       font-size: 14px;
       border-top: 2px solid #5D3FD3;
+      text-align: center;
     }
 
-    /* Animation Keyframes */
+    /* Animation */
     @keyframes slideIn {
       0% {
         transform: translateY(-100px);
@@ -102,8 +116,17 @@
 
 <body>
 
-<div class="glow" id="glow"></div>
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="#about">About Me</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#connect">Connect</a>
+</div>
 
+<!-- Main Content -->
 <div class="content">
 
   <div class="main-section">
@@ -114,14 +137,14 @@
   </div>
 
   <!-- About Me Section -->
-  <section class="about-me">
+  <section id="about">
     <h2>About Me</h2>
     <p>I bridge the gap between data and business strategy, uncovering insights that drive growth and enhance customer experiences. With a Master’s in Information Systems from the University of Texas at Arlington, I specialize in analytics, reporting automation, and business intelligence using SQL, Tableau, Power BI, and Looker.</p>
     <p>Passionate about problem-solving and continuous learning, I excel in fast-paced environments, translating complex data into strategic opportunities!</p>
   </section>
 
   <!-- Experience Section -->
-  <section class="experience">
+  <section id="experience">
     <h2>💼 Experience</h2>
     <ul>
       <li><strong>Data Analytics Intern — Basey Insurance (May 2024 - Aug 2024, Texas, USA)</strong><br>
@@ -141,7 +164,7 @@
   </section>
 
   <!-- Education Section -->
-  <section class="education">
+  <section id="education">
     <h2>🎓 Education</h2>
     <ul>
       <li><strong>The University of Texas at Arlington</strong> — Master's in Information Systems (Aug 2023 - May 2025)</li>
@@ -150,7 +173,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="projects">
+  <section id="projects">
     <h2>🛠️ Projects</h2>
     <ul>
       <li><strong>Netflix Data Analysis and Visualization</strong><br>
@@ -169,7 +192,7 @@
   </section>
 
   <!-- Certifications Section -->
-  <section class="certifications">
+  <section id="certifications">
     <h2>📜 Certifications</h2>
     <ul>
       <li>Google Data Analytics Professional Certificate</li>
@@ -179,8 +202,8 @@
     </ul>
   </section>
 
-  <!-- Connect with Me Section -->
-  <section class="connect">
+  <!-- Connect Section -->
+  <section id="connect">
     <h2>📫 Connect with Me</h2>
     <p>
       <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" style="text-decoration: none; color: #483D8B; font-weight: bold;">
@@ -199,15 +222,6 @@
   </footer>
 
 </div>
-
-<!-- Glow effect script -->
-<script>
-  const glow = document.getElementById('glow');
-  document.addEventListener('mousemove', function(e) {
-    glow.style.left = e.pageX + 'px';
-    glow.style.top = e.pageY + 'px';
-  });
-</script>
 
 </body>
 </html>
