@@ -165,8 +165,9 @@
       border: none;
       border-radius: 50%;
       padding: 14px;
-      cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      text-decoration: none;
     }
 
     #chatBtn:hover {
@@ -176,6 +177,7 @@
     #chatBtn img {
       width: 28px;
       height: 28px;
+      display: block;
     }
 
     /* Slide Animation */
@@ -283,10 +285,10 @@
 
 </div>
 
-<!-- Chat Button -->
-<button onclick="openLinkedIn()" id="chatBtn" title="Message Me">
+<!-- Chat Button as a Link -->
+<a href="https://www.linkedin.com/messaging/" target="_blank" id="chatBtn" title="Message Me">
   <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
-</button>
+</a>
 
 <!-- Scripts -->
 <script>
@@ -300,11 +302,6 @@
   // Sidebar toggle
   function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
-  }
-
-  // Open LinkedIn Inbox
-  function openLinkedIn() {
-    window.open("https://www.linkedin.com/messaging/", "_blank");
   }
 
   // Show/hide the chat button
