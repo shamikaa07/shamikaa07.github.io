@@ -36,6 +36,7 @@
     h1 {
       color: #483D8B;
       animation: slideIn 2s ease-out;
+      transition: text-shadow 0.2s ease;
     }
 
     h2 {
@@ -85,7 +86,7 @@
   <div class="main-section">
     <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
 
-    <h1>Hi, I'm Shamika! 👋</h1>
+    <h1 id="nameTitle">Hi, I'm Shamika! 👋</h1>
     <p>Welcome to my personal portfolio — where creativity meets technology.</p>
   </div>
 
@@ -173,6 +174,16 @@
   <footer>
     © 2025 Shamika Awasarmol. All rights reserved.
   </footer>
+
+  <!-- JavaScript for Moving Shadow Effect -->
+  <script>
+    const nameTitle = document.getElementById('nameTitle');
+    document.addEventListener('mousemove', function(e) {
+      const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      nameTitle.style.textShadow = `${x}px ${y}px 10px rgba(93, 63, 211, 0.6)`;
+    });
+  </script>
 
 </body>
 </html>
