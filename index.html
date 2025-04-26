@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #E6E6FA;
+      background-color: #E6E6FA; /* Lilac */
       color: #333;
       text-align: center;
     }
@@ -35,13 +35,13 @@
 
     h1 {
       color: #483D8B;
+      animation: slideIn 2s ease-out;
     }
 
     h2 {
       color: #6A5ACD;
     }
 
-    /* Align bullets and paragraphs left inside sections */
     section ul, section p {
       text-align: left;
       max-width: 800px;
@@ -64,6 +64,18 @@
       color: #5D3FD3;
       font-size: 14px;
       border-top: 2px solid #5D3FD3;
+    }
+
+    /* Animation Keyframes */
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -142,21 +154,20 @@
       <li>SQL for Data Science - Coursera</li>
     </ul>
   </section>
-<!-- Connect with Me Section -->
-<!-- Connect with Me Section -->
-<section class="connect">
-  <h2>📫 Connect with Me</h2>
-  <p>
-    <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" style="text-decoration: none; color: #483D8B; font-weight: bold;">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="vertical-align: middle;"> LinkedIn
-    </a> 
-    &nbsp;&nbsp;|&nbsp;&nbsp; 
-    <a href="mailto:shamikaa06@gmail.com" style="text-decoration: none; color: #483D8B; font-weight: bold;">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" style="vertical-align: middle;"> Email Me
-    </a>
-  </p>
-</section>
 
+  <!-- Connect with Me Section -->
+  <section class="connect">
+    <h2>📫 Connect with Me</h2>
+    <p>
+      <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" style="text-decoration: none; color: #483D8B; font-weight: bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="vertical-align: middle;"> LinkedIn
+      </a> 
+      &nbsp;&nbsp;|&nbsp;&nbsp; 
+      <a href="mailto:shamikaa06@gmail.com" style="text-decoration: none; color: #483D8B; font-weight: bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" style="vertical-align: middle;"> Email Me
+      </a>
+    </p>
+  </section>
 
   <!-- Footer -->
   <footer>
