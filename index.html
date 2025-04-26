@@ -90,39 +90,38 @@
       cursor: pointer;
     }
 
-    /* Main Content */
+    /* Content */
     .content {
       margin-left: 0;
       padding: 20px;
       transition: margin-left 0.4s;
+      text-align: center;
     }
 
     .sidebar.active ~ .content {
       margin-left: 220px;
     }
 
-    /* Top Section - Flex */
+    /* Top Section */
     .top-section {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 40px;
-      margin-bottom: 60px;
-      flex-wrap: wrap;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     .profile-pic {
-      width: 130px;
-      height: 130px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 5px solid #D8BFD8;
+      margin-bottom: 20px;
     }
 
-    .intro-text h1 {
+    h1 {
       color: #B287A3;
-      font-size: 32px;
+      font-size: 34px;
       animation: slideIn 2s ease-out;
+      margin-bottom: 10px;
     }
 
     section {
@@ -237,10 +236,8 @@
 
   <div class="top-section">
     <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
-    <div class="intro-text">
-      <h1>Hi, I'm Shamika!</h1>
-      <p>Welcome to my personal portfolio — where creativity meets technology.</p>
-    </div>
+    <h1>Hi, I'm Shamika!</h1>
+    <p>Welcome to my personal portfolio — where creativity meets technology.</p>
   </div>
 
   <section id="about">
@@ -299,7 +296,7 @@
 
 </div>
 
-<!-- Chat Button (Visible only on Desktop) -->
+<!-- Chat Button (Hidden on Mobile) -->
 <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" id="chatBtn" title="Message Me">
   <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
 </a>
@@ -318,7 +315,7 @@
     document.getElementById('sidebar').classList.toggle('active');
   }
 
-  // Show Chat Button only after scrolling
+  // Show Chat Button after scrolling
   let chatBtn = document.getElementById("chatBtn");
   window.onscroll = function() {
     if (document.documentElement.scrollTop > 300) {
