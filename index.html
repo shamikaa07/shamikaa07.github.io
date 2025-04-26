@@ -78,10 +78,21 @@
       padding: 20px;
       margin-left: 0;
       transition: margin-left 0.5s;
+      text-align: center;
     }
 
     .main.opened {
       margin-left: 220px;
+    }
+
+    .profile-pic-main {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #C89EBF;
+      object-fit: cover;
+      margin-top: 20px;
+      margin-bottom: 15px;
     }
 
     h1 {
@@ -102,6 +113,7 @@
       line-height: 1.7;
       margin-bottom: 10px;
       color: #555;
+      text-align: center;
     }
 
     ul {
@@ -124,7 +136,6 @@
       font-size: 14px;
     }
 
-    /* Scroll To Top Button */
     #topBtn {
       display: none;
       position: fixed;
@@ -176,6 +187,7 @@
 
 <!-- Sidebar -->
 <div id="sidebar" class="sidebar">
+  <h2 style="font-size:22px; font-weight:bold; color:#A569BD;">Shamika Awasarmol</h2>
   <a href="#about">About Me</a>
   <a href="#experience">Experience</a>
   <a href="#education">Education</a>
@@ -186,6 +198,8 @@
 
 <!-- Main Content -->
 <div id="main" class="main">
+  <img src="your-photo.png" alt="Profile Picture" class="profile-pic-main">
+
   <section>
     <h1>Hi, I'm Shamika!</h1>
     <p>Welcome to my portfolio — where creativity meets technology.</p>
