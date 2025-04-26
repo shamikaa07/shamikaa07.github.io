@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shamika Awasarmol | Portfolio</title>
-
   <style>
     body {
       margin: 0;
@@ -21,7 +20,7 @@
       position: absolute;
       width: 200px;
       height: 200px;
-      background: radial-gradient(circle, rgba(186, 139, 255, 0.5) 0%, rgba(186, 139, 255, 0) 60%);
+      background: radial-gradient(circle, rgba(186, 139, 255, 0.4) 0%, rgba(186, 139, 255, 0) 70%);
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -36,4 +35,247 @@
       width: 200px;
       height: 100%;
       background-color: #D8BFD8;
-      padding-top:
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      z-index: 2;
+      text-align: center;
+    }
+
+    .sidebar-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #483D8B;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      border-bottom: 2px solid #C9A9FF;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #483D8B;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #C9A9FF;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #D8BFD8;
+      transform: scale(1.05);
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-section {
+      padding: 50px 20px;
+    }
+
+    .profile-pic {
+      width: 200px;
+      border-radius: 50%;
+      border: 5px solid #D8BFD8;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin: 50px 0;
+      padding: 20px;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    h1 {
+      color: #483D8B;
+      animation: slideIn 2s ease-out;
+    }
+
+    h2 {
+      color: #D8B2D1;
+    }
+
+    section ul, section p {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #D8BFD8;
+      color: #5D3FD3;
+      font-size: 14px;
+      border-top: 2px solid #5D3FD3;
+      text-align: center;
+    }
+
+    /* Back to Top Button */
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #6A5ACD;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    #topBtn:hover {
+      background-color: #483D8B;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Glow Cursor -->
+<div class="glow" id="glow"></div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2 class="sidebar-name">Shamika Awasarmol</h2>
+  <a href="#about">About Me</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#connect">Connect</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+
+  <div class="main-section">
+    <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
+    <h1>Hi, I'm Shamika! </h1>
+    <p>Welcome to my personal portfolio — where creativity meets technology.</p>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights. I'm pursuing a Master’s in Information Systems at UT Arlington and love uncovering trends using SQL, Tableau, Power BI, and Looker.</p>
+  </section>
+
+  <section id="experience">
+    <h2>💼 Experience</h2>
+    <ul>
+      <li><strong>Data Analytics Intern — Basey Insurance (May 2024 - Aug 2024)</strong><br>
+      • Developed dashboards using Looker and Tableau<br>
+      • Processed 10,000+ rows of data for better insights
+      </li>
+      <li><strong>Business Analyst — Zycus (1 yr 7 mos)</strong><br>
+      • Supported data-driven product decisions<br>
+      • Gained hands-on experience in research and engagement
+      </li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li><strong>UT Arlington</strong> — M.S. in Information Systems (2023–2025)</li>
+      <li><strong>University of Mumbai</strong> — B.E. in Electronics & Telecom</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>🛠️ Projects</h2>
+    <ul>
+      <li><strong>Netflix Data Analysis</strong> — Tableau, Python</li>
+      <li><strong>Ad Campaign Analysis</strong> — ML Models, Time Series, Pandas</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2>📜 Certifications</h2>
+    <ul>
+      <li>Google Data Analytics Professional</li>
+      <li>AWS Certified Cloud Practitioner</li>
+      <li>Tableau Data Analyst</li>
+    </ul>
+  </section>
+
+  <section id="connect">
+    <h2>📫 Connect with Me</h2>
+    <p>
+      <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25"> LinkedIn
+      </a> |
+      <a href="mailto:shamikaa06@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="25"> Email Me
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Shamika Awasarmol. All rights reserved.
+  </footer>
+
+</div>
+
+<!-- Back to Top Button -->
+<button onclick="topFunction()" id="topBtn" title="Go to top">⬆️</button>
+
+<!-- Scripts -->
+<script>
+  // Glow cursor
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', function(e) {
+    glow.style.left = e.pageX + 'px';
+    glow.style.top = e.pageY + 'px';
+  });
+
+  // Back to top button
+  let topBtn = document.getElementById("topBtn");
+  window.onscroll = function() {
+    if (document.documentElement.scrollTop > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+</body>
+</html>
