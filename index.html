@@ -6,14 +6,17 @@
   <title>Shamika Awasarmol | Portfolio</title>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background-color: #FAF5FF;
       color: #333;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      position: relative;
     }
 
     /* Glow Cursor */
@@ -21,7 +24,7 @@
       position: absolute;
       width: 200px;
       height: 200px;
-      background: radial-gradient(circle, rgba(200,158,191,0.4) 0%, rgba(200,158,191,0) 70%);
+      background: radial-gradient(circle, rgba(200,158,191,0.3) 0%, rgba(200,158,191,0) 70%);
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -30,126 +33,98 @@
 
     /* Sidebar */
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: -220px;
-      width: 200px;
       height: 100%;
-      background-color: #F3E8F7;
-      padding-top: 60px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-      z-index: 3;
-      text-align: center;
-      transition: 0.4s;
-    }
-
-    .sidebar.active {
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
       left: 0;
-    }
-
-    .sidebar-name {
-      font-size: 20px;
-      font-weight: bold;
-      color: #C89EBF;
-      margin-bottom: 20px;
-      padding: 0 10px;
-      border-bottom: 2px solid #C89EBF;
+      background-color: #F3E8F7;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      text-align: center;
     }
 
     .sidebar a {
-      display: block;
-      color: #B287A3;
-      padding: 15px 20px;
+      padding: 10px 8px;
       text-decoration: none;
+      font-size: 20px;
+      color: #A569BD;
+      display: block;
+      transition: 0.3s;
       font-weight: bold;
-      transition: all 0.3s ease;
     }
 
     .sidebar a:hover {
       background-color: #E6D0EB;
-      color: #fff;
+      color: white;
       border-radius: 10px;
-      transform: scale(1.05);
     }
 
-    /* Hamburger Menu */
     .menu-btn {
-      position: fixed;
-      top: 15px;
-      left: 20px;
-      font-size: 28px;
+      font-size: 30px;
+      cursor: pointer;
       background: none;
       border: none;
       color: #A569BD;
-      z-index: 4;
-      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 3;
     }
 
-    /* Content */
-    .content {
-      margin-left: 0;
+    .main {
       padding: 20px;
-      transition: margin-left 0.4s;
+      margin-left: 0;
+      transition: margin-left 0.5s;
     }
 
-    .sidebar.active ~ .content {
+    .main.opened {
       margin-left: 220px;
     }
 
-    .main-section {
-      padding: 50px 20px;
-    }
-
-    .profile-pic {
-      width: 200px;
-      border-radius: 50%;
-      border: 5px solid #D8BFD8;
-      margin-bottom: 20px;
-    }
-
-    section {
-      margin: 50px 0;
-      padding: 20px;
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
-    }
-
     h1 {
+      font-size: 36px;
       color: #B287A3;
+      margin-bottom: 10px;
       animation: slideIn 2s ease-out;
     }
 
     h2 {
       color: #A569BD;
+      font-size: 28px;
+      margin: 30px 0 15px;
     }
 
-    section ul, section p {
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto;
+    p, li {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      color: #555;
     }
 
     ul {
       list-style-type: none;
-      padding: 0;
+      padding-left: 0;
     }
 
-    ul li {
-      margin: 10px 0;
+    section {
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     footer {
-      margin-top: 50px;
+      text-align: center;
       padding: 20px;
       background-color: #F3E8F7;
-      color: #C89EBF;
+      color: #A569BD;
       font-size: 14px;
-      border-top: 2px solid #C89EBF;
-      text-align: center;
     }
 
-    /* Back to Top Button */
+    /* Scroll To Top Button */
     #topBtn {
       display: none;
       position: fixed;
@@ -158,29 +133,21 @@
       z-index: 99;
       font-size: 18px;
       border: none;
-      outline: none;
-      background-color: #C89EBF;
+      background-color: #A569BD;
       color: white;
-      cursor: pointer;
       padding: 15px;
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
 
     #topBtn:hover {
-      background-color: #A569BD;
+      background-color: #8C4FAF;
     }
 
-    /* Slide Animation */
+    /* Animation */
     @keyframes slideIn {
-      0% {
-        transform: translateY(-100px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
 
     /* Responsive */
@@ -189,9 +156,10 @@
         display: none;
       }
       .sidebar {
-        left: 0;
+        width: 220px;
+        padding-top: 20px;
       }
-      .content {
+      .main {
         margin-left: 220px;
       }
     }
@@ -207,8 +175,7 @@
 <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
 <!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <h2 class="sidebar-name">Shamika Awasarmol</h2>
+<div id="sidebar" class="sidebar">
   <a href="#about">About Me</a>
   <a href="#experience">Experience</a>
   <a href="#education">Education</a>
@@ -218,17 +185,15 @@
 </div>
 
 <!-- Main Content -->
-<div class="content">
-
-  <div class="main-section">
-    <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
+<div id="main" class="main">
+  <section>
     <h1>Hi, I'm Shamika!</h1>
-    <p>Welcome to my personal portfolio — where creativity meets technology.</p>
-  </div>
+    <p>Welcome to my portfolio — where creativity meets technology.</p>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights that fuel business growth, optimize processes, and enhance customer experiences.</p>
+    <p>I bridge the gap between data and business strategy, transforming raw information into actionable insights that fuel business growth and enhance customer experiences.</p>
   </section>
 
   <section id="experience">
@@ -250,15 +215,15 @@
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Netflix Data Analysis</strong> — Data cleaning, Tableau dashboarding, trend analysis.</li>
-      <li><strong>Ad Campaign Performance</strong> — EDA, ML models (Random Forest, Decision Trees), ANOVA, ROI analysis.</li>
+      <li><strong>Netflix Data Analysis:</strong> Cleaned and analyzed 10,000+ TV shows & movies data, built Tableau dashboards for trend discovery.</li>
+      <li><strong>Ad Campaign Performance:</strong> EDA, statistical modeling, Random Forests, and Decision Trees for engagement score predictions.</li>
     </ul>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Google Data Analytics Professional</li>
+      <li>Google Data Analytics Professional Certificate</li>
       <li>AWS Certified Cloud Practitioner</li>
       <li>Tableau Data Analyst Certification</li>
     </ul>
@@ -267,19 +232,14 @@
   <section id="connect">
     <h2>Connect with Me</h2>
     <p>
-      <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25"> LinkedIn
-      </a> |
-      <a href="mailto:shamikaa06@gmail.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="25"> Email Me
-      </a>
+      <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">LinkedIn</a> |
+      <a href="mailto:shamikaa06@gmail.com">Email</a>
     </p>
   </section>
 
   <footer>
     © 2025 Shamika Awasarmol. All rights reserved.
   </footer>
-
 </div>
 
 <!-- Back to Top Button -->
@@ -296,7 +256,15 @@
 
   // Sidebar toggle
   function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
+    const sidebar = document.getElementById("sidebar");
+    const main = document.getElementById("main");
+    if (sidebar.style.width === "220px") {
+      sidebar.style.width = "0";
+      main.classList.remove("opened");
+    } else {
+      sidebar.style.width = "220px";
+      main.classList.add("opened");
+    }
   }
 
   // Back to Top Button
