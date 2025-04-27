@@ -255,8 +255,159 @@
   </style>
 </head>
 <body>
+<!-- Loading Animation -->
+<div id="loading">
+  <div class="loader"></div>
+</div>
 
-<!-- Full original HTML body content will continue here... -->
+<!-- Glow Cursor -->
+<div class="glow" id="glow"></div>
+
+<!-- Hamburger Button -->
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <h2 class="sidebar-name">Shamika Awasarmol</h2>
+  <a href="#about">About Me</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#connect">Connect</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+
+  <div class="top-section">
+    <img src="your-photo.png" alt="Shamika's Profile Picture" class="profile-pic">
+    <h1>Hi, I'm Shamika!</h1>
+    <p>Analytics Enthusiast | Storytelling Through Data and Technology.</p>
+  </div>
+
+  <!-- Sections -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I bridge the gap between data and business strategy, turning raw information into actionable insights that drive growth, improve processes, and enhance customer experiences. With a Master’s in Information Systems from the University of Texas at Arlington, I specialize in data analytics, reporting automation, and business intelligence using tools like SQL, Tableau, Power BI, and Looker.
+I’ve built dashboards, streamlined reporting, and uncovered trends that empower smarter decisions. Passionate about problem-solving and continuous learning, I thrive in fast-paced, collaborative environments. Beyond the data, I focus on building strong cross-functional relationships and translating technical findings into business value, always evolving with the digital landscape.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>University of Texas at Arlington • Texas, USA</strong><li> 
+        <li>Masters in Information Systems (2023–2025)</li>
+      <li>Relevant Coursework:Python, Project Management, Business Statistics, AI Ethics, Web and Social Analytics, Enterprice Resource Planning, Data Warehousing, Business Intelligence, and Analysis & Design.</li>
+      <li><strong>University of Mumbai • Mumbai, INDIA</strong><li>
+      <li>Bachelor of Engineering in Electronics & Telecommunication Engineering</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Basey Insurance • Texas, USA</strong></li> 
+      </li>Data Analytics Intern</li>
+      <li><strong>Zycus Infotech • Mumbai, INDIA</strong></li>
+      </li>Business Analyst</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Netflix Data Analysis:</strong> Performed data cleaning and data preprocessing on 10,000 TV shows & movies to analyze customer behavior, geographic patterns; designed dashboard to discover trends in the distributions, ratings, top genres over different period</li>
+      <li><strong>Digital Ad Campaign Performance:</strong> Conducted EDA, statistical analysis (ANOVA), and machine learning modeling to evaluate social media ad performance. Built predictive models (Random Forest, Decision Trees) to estimate engagement scores and conversion likelihood. Assessed ROI impact across marketing channels and identified key drivers of ad success. Applied time-series analysis to uncover seasonal trends affecting ad performance.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-item badge">Python</div>
+    <div class="skill-item badge">SQL</div>
+    <div class="skill-item badge">Power BI</div>
+    <div class="skill-item badge">Tableau</div>
+    <div class="skill-item badge">Excel</div>
+    <div class="skill-item badge">R</div>
+    <div class="skill-item badge">AWS</div>
+  </div>
+</section>
+
+
+ <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Business Analysis Fundamentals - Microsoft</li>
+      <li>Introduction to Data Analytics - Meta</li>
+      <li>UTA Datathon 2024 - UTA</li>
+      <li>Google Analytics for Beginners - Google</li>
+      <li>The Fundamentals of Digital Marketing - Google</li>
+    </ul>
+  </section>
+
+  <section id="connect">
+  <h2 class="connect-heading">Connect with Me</h2>
+  <div class="connect-icons">
+    <a href="https://github.com/shamikaa07" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" title="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" title="LinkedIn">
+    </a>
+   <a href="mailto:shamikaa06@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" title="Email">
+   </a>
+  </div>
+</section>
+
+
+  <footer>© 2025 Shamika Awasarmol. All rights reserved.</footer>
+
+</div>
+
+<!-- Chat Button -->
+<a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" id="chatBtn" title="Message Me">
+  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
+</a>
+
+<!-- Scripts -->
+<script>
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', function(e) {
+    glow.style.left = e.pageX + 'px';
+    glow.style.top = e.pageY + 'px';
+  });
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+  window.addEventListener("load", function() {
+    document.getElementById("loading").style.display = "none";
+  });
+  let chatBtn = document.getElementById("chatBtn");
+  window.onscroll = function() {
+    if (window.innerWidth >= 768) {
+      if (document.documentElement.scrollTop > 300) {
+        chatBtn.style.display = "block";
+      } else {
+        chatBtn.style.display = "none";
+      }
+    } else {
+      chatBtn.style.display = "none";
+    }
+  };
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', function() {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight - 100) {
+        section.classList.add('show');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
