@@ -208,25 +208,27 @@
       margin-top: 20px;
     }
     .connect-icons a {
-      background-color: #F3E8F7;
-      padding: 14px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .connect-icons a:hover {
-      background-color: #C89EBF;
-      transform: scale(1.1);
-    }
-    .connect-icons img {
-      width: 30px;
-      height: 30px;
-      filter: brightness(0) invert(1);
-      opacity: 1;
-    }
+  background-color: #C89EBF; /* soft lilac */
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.connect-icons a:hover {
+  background-color: #A569BD; /* darker lilac */
+  transform: scale(1.1);
+}
+
+.connect-icons img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1); /* this inverts dark icons to white */
+}
+
   /* Skills Grid and Badge Styles */
 .skills-grid {
   display: flex;
