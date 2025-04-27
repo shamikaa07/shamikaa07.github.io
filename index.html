@@ -227,6 +227,33 @@
       filter: brightness(0) invert(1);
       opacity: 1;
     }
+  /* Skills Grid and Badge Styles */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.badge {
+  background: linear-gradient(135deg, #E6D0EB, #F3E8F7);
+  color: #7D5A8C;
+  border: 1px solid #D8BFD8;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+}
+.badge:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #D8BFD8, #E6D0EB);
+  color: #fff;
+}
+
   </style>
 </head>
 
