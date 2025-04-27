@@ -78,18 +78,25 @@
       font-weight: bold;
       transition: all 0.3s ease;
     }
-     .sidebar a img {
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  vertical-align: middle;
+    .sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(185%) hue-rotate(235deg) brightness(95%) contrast(92%);
   }
     .sidebar a:hover {
-      background-color: #E6D0EB;
-      color: #fff;
-      border-radius: 10px;
-      transform: scale(1.05);
-    }
+  background-color: #E6D0EB;
+  color: #fff;
+  border-radius: 10px;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #E6D0EB;
+}
     .menu-btn {
       position: fixed;
       top: 15px;
@@ -285,27 +292,27 @@
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <h2 class="sidebar-name">Shamika Awasarmol</h2>
-  
+
   <a href="#about">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="About Icon"> About Me
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="About Me Icon"> About Me
   </a>
   <a href="#education">
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Education Icon"> Education
   </a>
   <a href="#experience">
-    <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Experience Icon"> Experience
+    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Experience Icon"> Experience
   </a>
   <a href="#projects">
-    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Projects Icon"> Projects
+    <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Projects Icon"> Projects
   </a>
   <a href="#skills">
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Skills Icon"> Skills
+    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721293.png" alt="Skills Icon"> Skills
   </a>
   <a href="#certifications">
-    <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="Certifications Icon"> Certifications
+    <img src="https://cdn-icons-png.flaticon.com/512/3208/3208724.png" alt="Certifications Icon"> Certifications
   </a>
   <a href="#connect">
-    <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Connect Icon"> Connect
+    <img src="https://cdn-icons-png.flaticon.com/512/646/646094.png" alt="Connect Icon"> Connect
   </a>
 </div>
 
