@@ -404,14 +404,7 @@ I’ve built dashboards, streamlined reporting, and uncovered trends that empowe
 </a>
 
 <!-- Scripts -->
-<!-- Chat Button -->
-<a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" id="chatBtn" title="Message Me">
-  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
-</a>
-
-<!-- ✅ Paste the fixed script HERE -->
 <script>
-  // 🔧 Fixed Script Starts
   const glow = document.getElementById('glow');
   document.addEventListener('mousemove', function(e) {
     glow.style.left = e.pageX + 'px';
@@ -422,16 +415,21 @@ I’ve built dashboards, streamlined reporting, and uncovered trends that empowe
     document.getElementById('sidebar').classList.toggle('active');
   }
 
+  // Close sidebar and scroll after delay
   const sidebarLinks = document.querySelectorAll('.sidebar a');
   sidebarLinks.forEach(link => {
     link.addEventListener('click', function (e) {
       if (window.innerWidth < 768) {
-        e.preventDefault();
+        e.preventDefault(); // stop jump
         const targetId = this.getAttribute('href');
         document.getElementById('sidebar').classList.remove('active');
+        // Wait until layout reflow is done (use requestAnimationFrame for safety)
         setTimeout(() => {
-          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 400); // match sidebar transition time
       }
     });
   });
@@ -458,8 +456,8 @@ I’ve built dashboards, streamlined reporting, and uncovered trends that empowe
       }
     });
   });
-  // 🔧 Fixed Script Ends
 </script>
+
 
 </body>
 </html>
