@@ -411,6 +411,15 @@ I’ve built dashboards, streamlined reporting, and uncovered trends that empowe
     glow.style.top = e.pageY + 'px';
   });
   function toggleSidebar() {
+    // Close sidebar on link click (for mobile)
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 768) {
+      document.getElementById('sidebar').classList.remove('active');
+    }
+  });
+});
     document.getElementById('sidebar').classList.toggle('active');
   }
   window.addEventListener("load", function() {
