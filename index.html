@@ -404,41 +404,53 @@ I’ve built dashboards, streamlined reporting, and uncovered trends that empowe
 </a>
 
 <!-- Scripts -->
+<!-- Chat Button -->
+<a href="https://www.linkedin.com/in/shamika-awasarmol-5aaa74192/" target="_blank" id="chatBtn" title="Message Me">
+  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat Icon">
+</a>
+
+<!-- ✅ Paste the fixed script HERE -->
 <script>
+  // 🔧 Fixed Script Starts
   const glow = document.getElementById('glow');
   document.addEventListener('mousemove', function(e) {
     glow.style.left = e.pageX + 'px';
     glow.style.top = e.pageY + 'px';
   });
+
   function toggleSidebar() {
-    // Close sidebar on link click (for mobile)
-const sidebarLinks = document.querySelectorAll('.sidebar a');
-sidebarLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth < 768) {
-      document.getElementById('sidebar').classList.remove('active');
-    }
-  });
-});
     document.getElementById('sidebar').classList.toggle('active');
   }
-  window.addEventListener("load", function() {
+
+  const sidebarLinks = document.querySelectorAll('.sidebar a');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.getElementById('sidebar').classList.remove('active');
+        setTimeout(() => {
+          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    });
+  });
+
+  window.addEventListener("load", function () {
     document.getElementById("loading").style.display = "none";
   });
+
   let chatBtn = document.getElementById("chatBtn");
-  window.onscroll = function() {
+  window.onscroll = function () {
     if (window.innerWidth >= 768) {
-      if (document.documentElement.scrollTop > 300) {
-        chatBtn.style.display = "block";
-      } else {
-        chatBtn.style.display = "none";
-      }
+      chatBtn.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
     } else {
       chatBtn.style.display = "none";
     }
   };
+
   const sections = document.querySelectorAll('section');
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     sections.forEach(section => {
       const rect = section.getBoundingClientRect();
       if (rect.top <= window.innerHeight - 100) {
@@ -446,7 +458,12 @@ sidebarLinks.forEach(link => {
       }
     });
   });
+  // 🔧 Fixed Script Ends
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
